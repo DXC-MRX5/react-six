@@ -6,7 +6,12 @@ const EditData = () => {
   const navi=useNavigate()
   const StoreData=useContext(DataStore)
   const locateId=useLocation().state.ind
-  const [updateData]=useState({})
+  const [updateData]=useState({
+    name:StoreData.key1[locateId].name,
+    age:StoreData.key1[locateId].age,
+    course:StoreData.key1[locateId].course,
+    batch:StoreData.key1[locateId].batch
+  })
   const handlechange=(e)=>{
     updateData[e.target.name]=e.target.value
   }
