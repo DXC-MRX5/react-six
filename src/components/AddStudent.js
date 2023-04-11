@@ -10,8 +10,11 @@ const AddStudent = () => {
     addData[e.target.name]=e.target.value
   }
   const handleAdd=()=>{
-    StoreData.key1.push(addData)
-    navi('/students')
+    if(addData.name && addData.age && addData.course && addData.batch){
+      StoreData.key1.push(addData)
+      navi('/students')
+    }
+    else{alert('All Fields are Required')}
   }
   return (
   <>
